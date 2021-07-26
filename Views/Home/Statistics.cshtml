@@ -1,0 +1,60 @@
+﻿
+@model LinkedIn.Models.ViewModel.UserViewModel
+@{
+}
+
+
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Visitors Analytics"
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [{
+		type: "line",
+		name: "Desktops",
+		showInLegend: true,
+		dataPoints: @Html.Raw(ViewBag.DataPoints1)
+	}, {
+		type: "line",
+		name: "Mobile",
+		showInLegend: true,
+		dataPoints: @Html.Raw(ViewBag.DataPoints2)
+	}]
+});
+chart.render();
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="stats-top">
+
+    <div style="margin-left: 20px;">
+
+        <img src="@Model.ProfilePicture" class="avata-img" style="border-radius: 5px; width: 50px; height: 50px;" />
+    </div>
+    <div class="states_profile">
+        @Model.Name
+    </div>
+
+</div>
+
+<div>
+    <div id="chartContainer" style="height: 500px; width: 100%;"></div>
+</div>

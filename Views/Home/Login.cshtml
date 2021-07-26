@@ -1,0 +1,55 @@
+﻿
+ @model LinkedIn.Models.ViewModel.UserViewModel
+
+
+
+<div class="login_card">
+    <div class="title" >
+       Switch Accounts
+    </div>
+    @using (Html.BeginForm("ProfileClick", "Home"))
+    {
+
+    <div>
+        @{ 
+            foreach(var user in Model.Users)
+            {
+                <button  type="submit" name="profile" value="@user.AutomatedId" class="profile_btn">
+                    
+                
+            <div  style="display: flex; margin: 23px 20px; cursor: pointer; border-color: gray; border-width: 4px;" >
+                
+             
+
+                <div>
+                    <img class="avata-img" src="@user.ProfilePicture" />
+
+                </div>
+                <div style="color: #191919; font-size: 23px; margin: 15px 10px;">
+                   @user.Name
+                    <div style="display: flex; font-size: 17px; width: 100px; justify-content: space-between;">
+                        <div>
+                            Notifications: 
+                        </div>
+                        <div >
+                            @user.PageNotification
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+                    </button>
+
+            }
+
+
+        }
+        
+
+
+    </div>
+    }
+
+
+</div>

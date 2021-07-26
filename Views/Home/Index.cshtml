@@ -1,0 +1,316 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model LinkedIn.Models.ViewModel.UserViewModel
+
+<div class="toast_pop" id="popup">
+
+</div>
+<div class="index-container ">
+    <div class="column1">
+        <div class="card_">
+
+            <div class="cover">
+                <img src="@Model.CoverPage" class="cover-img" />
+            </div>
+            <div style="margin-left:140px;">
+
+                <img src="@Model.ProfilePicture" style="z-index:1;  border: 5px solid white;" class="avata-img"  />
+
+            </div>
+            <br />
+
+
+            <div class="bio">
+               @Model.Bio
+                <br />
+                
+                email: @Model.Email
+
+
+            </div>
+            <hr class="line" />
+
+            <div class="profile-stats">
+
+                <div class="profile-stats-item">
+                    <div>
+                        Who viewed your profile
+                    </div>
+                    <div style="color: blue;">
+                        @Model.ProfileViews
+                    </div>
+
+                </div>
+                <div class="profile-stats-item">
+                    <div>
+                        Views of your posts
+                    </div>
+                    <div style="color: blue;">
+                        @Model.PostViews
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="line" />
+
+            <div style="display: flex; margin-left: 10px;">
+                <div>
+
+                    <img src="~/drawable/bookmarks.png" />
+                </div>
+                <div style="margin-left: 14px; font-size:18px; font-weight:bold;">
+                    My items
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="card_" style="margin-top: 20px;">
+
+            <div class="cover">
+                <img src="@Model.CoverPage" class="cover-img" />
+            </div>
+            <div style="margin-left:40px;">
+
+                <img src="@Model.ProfilePicture" style="z-index:1; border: 5px solid white;" class="avata-img" />
+
+            </div>
+            <br />
+
+
+            
+            <hr class="line" />
+
+            <div class="profile-stats">
+
+                <div class="profile-stats-item">
+                    <div>
+                        Page Notifications
+                    </div>
+                    <div style="color: blue;">
+                        @Model.PageNotification
+                        
+                    </div>
+
+                </div>
+                <div class="profile-stats-item">
+                    <div>
+                        Page Visitors
+                    </div>
+                    <div style="color: blue;">
+                        @Model.PageVisitors
+                    </div>
+
+                </div>
+
+            </div>
+
+          
+
+
+        </div>
+
+
+    </div>
+
+    <!--News feed-->
+
+    <div class="column2">
+       
+        <div class="search_tab">
+
+            <div class="search_tab-row">
+                <div class="avata">
+                    <img class="avata-img" src="@Model.ProfilePicture" />
+                </div>
+                <div class="search-wrapper">
+                    <input class="search-public" placeholder="Create a post" />
+                </div>
+
+              
+
+
+            </div>
+
+
+            <div class="search_tab-media">
+                <div class="media-item" style="margin-left: 0;">
+                    <img class="media_icon" src="~/drawable/whiteboard.png" />
+                    <div class="media_text">
+
+                    Picture
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img class="media_icon" src="~/drawable/cinema.png" />
+                    <div class="media_text">
+
+                        Video
+                    </div>
+
+                </div>
+                <div class="media-item">
+                    <img class="media_icon" src="~/drawable/planner.png" />
+                    <div class="media_text">
+
+                        Event
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img class="media_icon" src="~/drawable/news.png" />
+                    <div class="media_text">
+
+                        Write article
+                    </div>
+                </div>
+
+
+            </div>
+            <br />
+
+           
+
+
+
+        </div>
+
+        <hr class="line" style="width: 90%;" />
+
+        <div>
+
+            @{ 
+
+                foreach(var post in Model.Feed)
+                {
+                   
+                   
+
+                    <div class="post" onclick="OnProfileClick" style="background-color: white; margin: 0 15px; border-radius: 15px;">
+                      
+                        <div style="display: flex;">
+
+                            <div class="post_profile" style="margin: 8px; cursor: pointer;">
+                                <img src="@post.Profile" class="avata-img" />
+                            </div>
+                            <div style="margin-left: 10px; padding: 0; margin-top: 8px;">
+                                <h5>@post.Name</h5>
+                                @post.KnowAs <br />
+                                @post.Time
+                            </div>
+
+                        </div>
+                        <div style="margin: 10px 10px;">
+                            @post.PostDescription
+                        </div>
+
+                   
+                        <div >
+                            <video class="post_video" style="width: 100%;" controls>
+                                <source src="@post.Source" type="video/mp4">
+
+                            </video>
+                        </div>
+
+
+                        
+                            @using (Html.BeginForm("LikeClick", "Home"))
+                            {
+                                <button type="submit" name="likes" value="@post.ID" >like</button>
+                            }
+                            </div>
+
+
+
+
+
+                    
+
+
+
+
+
+                }
+
+
+            }
+
+
+        </div>
+
+        
+
+
+
+    </div>
+
+    <div class="column3">
+        <div class="card_">
+            <div class="topics">
+                Todays top courses 
+
+                <img src="~/drawable/infoC.png" style="width:30px; height:30px;" />
+            </div>
+            <br />
+
+            <div class="card_body">
+                <h5>1.LeaderShip Foundations</h5>
+                <p>Dr. Shirley Davis</p>
+
+                <h5>2.Leading with a Heavy Heart</h5>
+                <p>Kat Cole</p>
+
+
+                <h5>2.Stay Positive in face of....</h5>
+                <p>Scott Mauz</p>
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="card_" style="margin-top: 16px;">
+            <div style="text-align:end; padding-right: 10px; ">
+                AD...
+            </div>
+            <div style="height: 30px; padding-left: 50px; "> Bheki,showcase your services </div>
+
+            <div class="ad_image">
+                <img src="@Model.ProfilePicture" class="avata-img" />
+                <img src="~/drawable/demonstration.jpg" style="margin-left: 10px;" class="avata-img" />
+            </div>
+
+            <div style="margin-left: 40px;">
+                Find New clients with a free service
+            </div>
+
+            <button class="btn_get-started" >Get Started</button>
+            <a asp-area="" asp-controller="Home" asp-action="Statistics">
+                Statisitcs
+            </a>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script>
+    function OnProfileClick () {
+        document.getElementById("popup").clientHeight = 0;
+    }
+
+    function OnLike(id) {
+       
+    }
+
+</script>

@@ -1,0 +1,21 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.stats-top{
+    display: flex;
+    background-color: white;
+   position: relative;
+   top: 0;
+   width: 100%;
+}
+
+.states_profile {
+    margin-left: 10px;
+    font-size: 27px;
+    text-align: center;
+    padding-top: 0px;
+}

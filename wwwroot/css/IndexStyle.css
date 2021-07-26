@@ -1,0 +1,203 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+
+
+.column1{
+    grid-area: column1;
+  
+    position: fixed;
+}
+
+.column2 {
+    grid-area: column2;
+   
+
+}
+
+.column3 {
+    grid-area: column3;
+   
+}
+.index-container {
+    display: grid;
+    grid-auto-columns: 400px 700px 400px;
+    grid-template-areas: "column1 column2 column3";
+    margin-left: 60px;
+    
+}
+
+
+
+
+/*-----------Column 1-------------*/
+
+.cover{
+    height: 60px;
+    
+}
+.cover-img{
+    width: 380px;
+    height: 106px;
+    z-index: 1;
+    
+}
+
+.bio{
+    margin-left: 30px;
+}
+
+.line{
+    background-color: gray;
+    height: 2px;
+}
+
+.profile-stats-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/*-----------Column 2-----------*/
+
+
+.search_tab{
+    margin: 0 10px 0 10px;
+    background-color: #fff;
+    border-radius: 20px;
+
+}
+.search_tab-row{
+    display: flex;
+    padding: 10px;
+}
+.avata{
+    
+    cursor: pointer;
+}
+.avata-img{
+    border-radius: 250px;
+    height: 80px;
+    width: 80px;
+}
+
+.search-wrapper{
+    margin-top: 9px;
+    margin-left: 9px;
+    
+}
+.search-public{
+    width: 500px;
+    height: 64px;
+    background-color: white;
+    padding: 10px 0;
+    border-radius: 30px;
+    
+    border-width: 0.2rem;
+    border-color: #aaaaaa;
+    
+}
+
+.search_tab-media{
+    display: flex;
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+.media-item{
+    display: flex;
+    margin-top: 15px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.media_icon{
+    width: 35px;
+    height: 35px;
+}
+.media_text{
+    margin-left: 13px;
+    text-align: center;
+    color: #101010;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.1rem;
+}
+
+
+
+.post{
+    
+}
+.post_video{
+    width: inherit;
+
+}
+.like{
+    width: 80px;
+    height: 50px;
+    background-color: aqua;
+}
+
+
+/*---------Column 3 -----------*/
+.card_ {
+    background-color: white;
+    padding: 7px;
+    border-radius: 15px;
+}
+
+.topics{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  
+    font-weight: bold;
+}
+
+.ad_image{
+    display: flex;
+    margin-left: 70px;
+}
+
+.btn_get-started {
+    padding: 10px;
+    background-color: white;
+    color: #193afc;
+    border-color: #193afc;
+    border-width: 0.1rem;
+    border-radius: 20px;
+    font-weight: 400;
+    margin-top: 12px;
+    margin-left: 120px;
+}
+
+.toast_pop{
+    position: fixed;
+    width: 250px;
+    height: 70px;
+    bottom: 0;
+    right: 130px;
+    z-index: 20;
+    background-color: red;
+    border-radius: 15px;
+    transition: 1s;
+    
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+﻿body {
+    display: block;
+}
+
+
+.navbar-top{
+
+    display: grid;
+  margin-left: 60px;
+    height: 50px;
+    grid-auto-columns: 55px 940px auto;
+    grid-template-areas:
+        "navbar_logo search navbar_home-item";
+
+    
+}
+
+.logo{
+    grid-area: logo;
+    width: 45px;
+    height: 45px;
+    align-content: center;
+    padding: 6px 0px 0px 6px;
+}
+
+.navbar_logo {
+    display: inline-block;
+    justify-content: space-between;
+    grid-area: navbar_logo;
+}
+
+.search{
+    grid-area: search;
+    border: none;
+    
+}
+.search_item{
+    background-color: #eeefff;
+    border: none;
+    width: 240px;
+    border-radius: 7px;
+    margin-top: 0.5rem;
+    height: 40px;
+}
+.navbar_home-item{
+    grid-area: navbar_home-item;
+   
+    display: flex;
+    margin-top: 3px;
+    
+    
+}
+.label-title{
+    color: #191919;
+    font-size: 23px;
+    grid-area: label-title;
+    
+
+}
+
+.home_item{
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.home_item-img{
+
+    padding-left: 9px;
+   
+}
+
+/* home icon images*/
+.home {
+    grid-area: home;
+    margin-left: 15px;
+}
+.msg{
+    grid-area: msg;
+    margin-left: 15px;
+}
+.dash {
+    grid-area: dash;
+    margin-left: 15px;
+}
+.package {
+    grid-area: package;
+    margin-left: 15px;
+}
+.under-line{
+    background-color: #fff;
+    width: 0%;
+    height: 4px;
+    transition: 0.6s;
+}
+
+.home_item:hover .under-line {
+    width: 100%;
+    background-color: #191919;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
